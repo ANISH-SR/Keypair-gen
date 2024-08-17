@@ -405,4 +405,16 @@ async function solve(){
 solve();
 
 
+function setTimeoutPromisified2(ms){
+    return new Promise((resolve, reject) => {
+        if(!err){
+            setTimeout(resolve,ms);
+        }
+        else{
+            reject();
+        }
+    })
+}
 
+
+setTimeoutPromisified2().then()
