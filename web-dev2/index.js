@@ -388,12 +388,12 @@ console.log(dooperation(1,5,divide));
 
 
 
-function setTimeoutPromisified(ms){
-    return new Promise(resolve => setTimeout(resolve,ms))
+function setTimeoutPromisified(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 
-async function solve(){
+async function solve() {
     await setTimeoutPromisified(1000);
     console.log("Hi")
     await setTimeoutPromisified(3000);
@@ -405,16 +405,20 @@ async function solve(){
 solve();
 
 
-function setTimeoutPromisified2(ms){
+function setTimeoutPromisified2(ms) {
     return new Promise((resolve, reject) => {
-        if(!err){
-            setTimeout(resolve,ms);
+        if (!err) {
+            setTimeout(resolve, ms);
         }
-        else{
+        else {
             reject();
         }
     })
 }
 
 
-setTimeoutPromisified2().then()
+setTimeoutPromisified2(2000).then(() => {
+    console.log("2 seconds have passed");
+}).catch(() => {
+    console.log("Error has been detected")
+})
